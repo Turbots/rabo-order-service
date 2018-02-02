@@ -1,0 +1,12 @@
+---
+memory: 768MB
+instances: 1
+applications:
+- name: order-service
+  path: target/order-service-0.0.1-SNAPSHOT.jar
+  buildpack: https://github.com/cloudfoundry/java-buildpack
+  timeout: 120
+  routes:
+    - route: rabo-order-service.cfapps.io
+  services:
+    - my-mysql
