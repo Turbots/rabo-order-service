@@ -25,6 +25,7 @@ public class DataGenerator implements CommandLineRunner {
 			.items(Collections.singletonList(OrderItem.builder()
 				.price(1.0)
 				.quantity(1)
+				.ref("BIER")
 				.description("Biertje")
 				.build()))
 			.status(OrderStatus.PENDING)
