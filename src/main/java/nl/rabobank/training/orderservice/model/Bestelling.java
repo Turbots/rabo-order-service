@@ -30,4 +30,7 @@ public class Bestelling {
 	@JsonView(OrderSummary.class)
 	@NotEmpty
 	private List<OrderItem> items;
+
+	@JsonView(OrderSummary.class)
+	private double totalPrice;
 }

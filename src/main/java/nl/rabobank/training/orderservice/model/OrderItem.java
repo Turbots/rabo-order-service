@@ -1,16 +1,14 @@
 package nl.rabobank.training.orderservice.model;
 
 import com.fasterxml.jackson.annotation.JsonView;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import nl.rabobank.training.orderservice.web.OrderSummary;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
+@Setter
 @Getter
 @Builder
 @Entity
@@ -24,6 +22,8 @@ public class OrderItem {
 
 	@JsonView(OrderSummary.class)
 	private String description;
+	@JsonView(OrderSummary.class)
+	private String ref;
 	@JsonView(OrderSummary.class)
 	private double price;
 	@JsonView(OrderSummary.class)
